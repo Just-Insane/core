@@ -519,7 +519,7 @@ async def test_purehotcool_empty_env_attributes(devices, login, hass):
 async def test_purehotcool_fan_state_auto(devices, login, hass):
     """Test device fan state auto."""
     device = devices.return_value[0]
-    device.state.fan_state = FanState.FAN_AUTO.value
+    device.state.FAN_SPEED_AUTO = FanState.FAN_AUTO.value
     await async_setup_component(hass, DYSON_DOMAIN, _get_config())
     await hass.async_block_till_done()
 
